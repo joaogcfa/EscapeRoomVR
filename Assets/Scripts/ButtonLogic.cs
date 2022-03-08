@@ -15,7 +15,7 @@ public class ButtonLogic : MonoBehaviour
         numeros += numero.ToString();
         SetText(numeros);
         print(numeros);
-        if(numeros.Length > 3){
+        if(numeros.Length > 2){
             if (numeros.Trim().Equals("465")) {
                 print("ganhou!");
                 numeros = "";
