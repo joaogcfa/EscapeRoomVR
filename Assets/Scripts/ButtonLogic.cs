@@ -16,7 +16,6 @@ public class ButtonLogic : MonoBehaviour
         SetText(numeros);
         print(numeros);
         if(numeros.Length > 3){
-            print(numeros.Trim());
             if (numeros.Trim().Equals("4652")) {
                 print("ganhou!");
                 numeros = "";
@@ -31,8 +30,5 @@ public class ButtonLogic : MonoBehaviour
     public void SetText(string text)
     {
         textMesh.text = text;
-    }
-    void Teste(){
-        print("Passou no teste");
     }
 }
