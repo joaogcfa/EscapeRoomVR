@@ -7,9 +7,12 @@ public class BotaoDialogic : MonoBehaviour
     public TextMeshPro textMesh;
     public string fases;
     public int contador;
+    public GameObject Quebracabeca;
     public void Start(){
         GameObject textoRespostaDia = GameObject.Find("textoRespostaDia");
         textMesh = textoRespostaDia.GetComponent<TextMeshPro>();
+        // GameObject Quebracabeca = GameObject.Find("Quebracabeca");
+        Quebracabeca.SetActive(false);
     }
     public void Apertar(string momento){
         print(momento);
@@ -19,6 +22,7 @@ public class BotaoDialogic : MonoBehaviour
         contador += 1;
         if(contador > 2){
             if (fases.Trim().Equals("NoiteTardeDia")) {
+                Quebracabeca.SetActive(true);
                 SetText("6");
                 fases = "";
                 contador = 0;

@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class ButtonLogic : MonoBehaviour
 {
+    public GameObject Porta;
     public TextMeshPro textMesh;
     public string numeros;
     public string resposta = "465";
@@ -17,7 +19,9 @@ public class ButtonLogic : MonoBehaviour
         print(numeros);
         if(numeros.Length > 2){
             if (numeros.Trim().Equals("465")) {
-                print("ganhou!");
+                Porta.SetActive(false);
+                Time.deltaTime(5000);
+                SceneManager.LoadScene("menu");
                 numeros = "";
             }
             else
