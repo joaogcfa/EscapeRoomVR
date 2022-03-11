@@ -20,8 +20,8 @@ public class ButtonLogic : MonoBehaviour
         if(numeros.Length > 2){
             if (numeros.Trim().Equals("465")) {
                 Porta.SetActive(false);
-                Time.deltaTime(5000);
-                SceneManager.LoadScene("menu");
+                // Time.deltaTime(5000);
+                StartCoroutine(funcao());
                 numeros = "";
             }
             else
@@ -34,5 +34,11 @@ public class ButtonLogic : MonoBehaviour
     public void SetText(string text)
     {
         textMesh.text = text;
+    }
+    IEnumerator funcao()
+    {
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("menu");
+
     }
 }

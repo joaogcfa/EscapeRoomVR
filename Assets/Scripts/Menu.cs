@@ -8,5 +8,10 @@ public class Menu : MonoBehaviour
     public void Inicia()
     {
         SceneManager.LoadScene("EscapeRoom");
+
+    }
+    public void quit()
+    {
+        Application.Quit();
     }
 }
