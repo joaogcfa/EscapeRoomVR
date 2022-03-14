@@ -8,6 +8,7 @@ public class BotaoDialogic : MonoBehaviour
     public string fases;
     public int contador;
     public GameObject Quebracabeca;
+    public Material Material;
     public void Start(){
         GameObject textoRespostaDia = GameObject.Find("textoRespostaDia");
         textMesh = textoRespostaDia.GetComponent<TextMeshPro>();
@@ -25,19 +26,30 @@ public class BotaoDialogic : MonoBehaviour
                 Quebracabeca.SetActive(true);
                 SetText("6");
                 fases = "";
-                contador = 0;
+               contador = 0;
             }
             else
-            {   
-
+            {
+                StartCoroutine(funcao());
                 fases = "";
                 contador = 0;
             }
         }
 
+
     }
     public void SetText(string text)
     {
         textMesh.text = text;
+    }
+
+    IEnumerator funcao()
+    {
+        yield return new WaitForSeconds(5/10);
+        for(int i = 0; i < 3; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            child.GetComponent<Renderer>().material = Material;
+        }
     }
 }
